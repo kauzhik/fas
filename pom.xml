@@ -97,14 +97,14 @@
 
     <repositories>
         <repository>
-            <stationId>spring-snapshots</stationId>
+            <id>spring-snapshots</id>
             <url>http://repo.spring.io/libs-snapshot</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </repository>
         <repository>
-            <stationId>spring-milestones</stationId>
+            <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
             <snapshots>
@@ -114,14 +114,14 @@
     </repositories>
     <pluginRepositories>
         <pluginRepository>
-            <stationId>spring-snapshots</stationId>
+            <id>spring-snapshots</id>
             <url>http://repo.spring.io/libs-snapshot</url>
             <snapshots>
                 <enabled>true</enabled>
             </snapshots>
         </pluginRepository>
         <pluginRepository>
-            <stationId>spring-milestones</stationId>
+            <id>spring-milestones</id>
             <name>Spring Milestones</name>
             <url>https://repo.spring.io/milestone</url>
             <snapshots>
