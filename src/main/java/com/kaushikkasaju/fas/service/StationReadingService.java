@@ -5,6 +5,6 @@ import com.kaushikkasaju.fas.model.StationReading;
 import java.util.List;
 
 public interface StationReadingService {
-    StationReading save(StationReading stationReading);
+    boolean save(StationReading stationReading);
     List<StationReading> findAll();
 }

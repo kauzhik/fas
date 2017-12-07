@@ -25,8 +25,9 @@ public class StationReadingController {
             produces = {MediaType.APPLICATION_JSON_VALUE}
     )
     public ResponseEntity stationReading(@RequestBody StationReading stationReading){
-        stationReadingService.save(stationReading);
-        return new ResponseEntity(HttpStatus.OK);
+        if(stationReadingService.save(stationReading)){
+            return new ResponseEntity(HttpStatus.OK);
+        }else return new ResponseEntity(HttpStatus.INTERNAL_SERVER_ERROR);
     }
 
     @RequestMapping(

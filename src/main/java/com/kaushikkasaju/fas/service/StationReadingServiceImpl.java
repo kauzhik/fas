@@ -16,8 +16,11 @@ public class StationReadingServiceImpl implements StationReadingService {
     StationReadingRepository stationReadingRepository;
 
     @Override
-    public StationReading save(StationReading stationReading) {
-        return stationReadingRepository.recordStationReading(stationReading);
+    public boolean save(StationReading stationReading) {
+        if(stationReadingRepository.recordStationReading(stationReading) != null)
+            return true;
+        else
+            return false;
     }
 
     @Override

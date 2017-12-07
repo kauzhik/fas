@@ -8,5 +8,6 @@ import java.util.Date;
 import java.util.List;
 
 public interface CrudStationReadingRepository extends JpaRepository<StationReading, Integer> {
-    List<StationReading> findByStationAndReadTimeBetween(Station station, Date startDate, Date endDate);
+    List<StationReading> findTop10ByStationOrderByIdDesc(Station station);
+    StationReading findFirstByOrderByReadTimeDesc();
 }
