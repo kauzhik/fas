@@ -3,17 +3,16 @@ This project is about early warning system which warns people about the possible
 The overall system was a team work and the reference to the implementation of sensor and mobile application is given below.
 
 ### Sensor application in Python( Client side implementation) ###
-Author - Shelby LeBlanc
+Author - Shelby LeBlanc,
 Link - Coming soon..
 
 ### Mobile application in Android( Client side implementation) ###
-Language - A
-Author - Sagun Pandey
+Author - Sagun Pandey,
 Link - Coming soon..
 
 ## Prerequisites ##
 1. Oracle Java Development Kit 8
-2. Spring framework
+2. Spring boot, Hibernate
 3. MySQL server 
 
 ## Setting-up development environment ##
