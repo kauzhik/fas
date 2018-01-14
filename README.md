@@ -3,12 +3,11 @@ This project is about early warning system which warns people about the possible
 The overall system was a team work and the reference to the implementation of sensor and mobile application is given below.
 
 ### Sensor application in Python( Client side implementation) ###
-Author - Shelby LeBlanc,
-Link - Coming soon..
+Author - Shelby LeBlanc
 
 ### Mobile application in Android( Client side implementation) ###
 Author - Sagun Pandey,
-Link - Coming soon..
+Link - https://github.com/sagunpandey/ews-app 
 
 ## Prerequisites ##
 1. Oracle Java Development Kit 8
