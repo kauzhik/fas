@@ -38,24 +38,25 @@ public class StationReadingRepositoryImpl implements StationReadingRepository {
     MessageGenerator messageGenerator;
 
     @Override
-    public List<StationReading> findAll() {
-        return null;
-    }
-    @Override
     public StationReading recordStationReading(StationReading stationReading) {
         StationReading stationReadingLatest = crudStationReadingRepository
                 .findFirstByOrderByReadTimeDesc();
 
+        Session currentSession = (Session) em.getDelegate();
+
+        if(stationReadingLatest == null){
+            Integer id = (Integer)currentSession.save(stationReading);
+            stationReading.setId(id);
+            Station station = stationRepository.findById(stationReading.getStation().getId());
+            stationReading.setStation(station);
+            return stationReading;
+        }
 //        Check for causality
         if(stationReadingLatest.getReadTime().compareTo(stationReading.getReadTime()) < 0){
 //            okay
-            Session currentSession = (Session) em.getDelegate();
-
+            int flag = 0;
             Integer id = (Integer)currentSession.save(stationReading);
             stationReading.setId(id);
-            int flag = 0;
-
-            StationStatus stationStatus = new StationStatus();
 
 //        Set Alarm level
             Station station = stationRepository.findById(stationReading.getStation().getId());
@@ -80,6 +81,8 @@ public class StationReadingRepositoryImpl implements StationReadingRepository {
                     alarm = Alarm.SAFE;
                 }
             }
+
+            StationStatus stationStatus = new StationStatus();
             stationStatus.setStationId(station.getId());
             stationStatus.setStation(station);
             stationStatus.setWaterLevel(waterLevel);
@@ -137,5 +140,9 @@ public class StationReadingRepositoryImpl implements StationReadingRepository {
 
         }else
             return null;
+    }
+    @Override
+    public List<StationReading> findAll() {
+        return null;
     }
 }

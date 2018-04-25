@@ -34,9 +34,14 @@ public class StationReadingController {
             method = RequestMethod.GET,
             produces = {MediaType.APPLICATION_JSON_VALUE}
     )
-    public List<StationReading> stationReadingList(){
+    public ResponseEntity<List<StationReading>> stationReadingList(){
         List<StationReading> stationReading = stationReadingService.findAll();
-        return  stationReading;
+        if(stationReading != null){
+            return ResponseEntity.ok(stationReading);
+        }else{
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        }
+
     }
 
 }

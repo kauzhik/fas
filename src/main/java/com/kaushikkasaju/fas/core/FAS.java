@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 @ComponentScan(value = "com.kaushikkasaju.fas")
 public class FAS {
     public static void main(String[] args){
+//        Also registers Dispatcher Servlet
         new SpringApplicationBuilder(FAS.class)
                 .initializers(new FASInitializer())
                 .run(args);
