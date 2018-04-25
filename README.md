@@ -20,6 +20,3 @@ Link - https://github.com/sagunpandey/ews-app
 3. Edit application.properties file as necessary (Database username/password, port for running service, etc.)
 4. Change the value of the property ‘spring.jpa.hibernate.ddl-auto’ to ‘create’ if running for the first time. This will    initialize the database and populate the created tables with default data. Set it to ‘none’ when the database is initialized.
 
-## License ##
-This project is licensed under the MIT License - see the LICENSE.md file for details.
-
